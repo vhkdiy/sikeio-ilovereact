@@ -428,6 +428,8 @@ body {
       "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,
       Arial, "Lucida Grande", sans-serif;
   font-weight: 100;
+  position: relative;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -467,9 +469,15 @@ a:hover {
           flex-direction: column;
 }
 
+#intro-section {
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .section {
   /*background-color: rgba(255,0,0,0.3);*/
-  border: 2px solid #FFF;
+  /*border: 2px solid #FFF;*/
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -484,6 +492,30 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+}
+
+.overlay {
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(31,30,52,1));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.react-logo {
+  position: relative;
+  z-index: 1;
+}
+
+.section-1-title {
+  z-index: 1;
+}
+
+.nav {
+  z-index: 1;
 }
 
 .nav a {
@@ -498,7 +530,7 @@ a:hover {
 }
 
 .iphone-demo {
-  background-color: rgba(255,0,0,0.3);
+  /*background-color: rgba(255,0,0,0.3);*/
   /*flex-grow: 1;*/
   -ms-flex-item-align: stretch;
       align-self: stretch;
@@ -510,10 +542,40 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+}
+
+.iphome-tumblr-wrap {
+  width: 300px;
+  height: 632px;
+  position: relative;
+}
+
+.iphome-demo-tumblr {
+  position: absolute;
+  top: 90px;
+  left: 25px;
+}
+
+@media (max-width: 900px) {
+  .iphome-tumblr-wrap {
+    width: 200px;
+    height: 432px;
+  }
+  .iphome-demo-shell {
+    width: 200px;
+    height: 432px;
+  }
+  .iphome-demo-tumblr {
+    width: 170px;
+    height: 300px;
+    top: 67px;
+    left: 15px;
+  }
 }
 
 .feature-description {
-  background-color: rgba(0,255,0,0.3);
+  /*background-color: rgba(0,255,0,0.3);*/
   /*flex-grow: 1;*/
   -ms-flex-item-align: stretch;
       align-self: stretch;
@@ -529,4 +591,45 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.section-info {
+  padding-right: 50px;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+#android-robot {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(50%,50%) rotate(-45deg);
+          transform: translate(50%,50%) rotate(-45deg);
+}
+
+#slider-control {
+  padding: 3px;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+          transform: translate(0,-50%);
+  right: 5px;
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
 }
